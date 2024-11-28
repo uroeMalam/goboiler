@@ -9,7 +9,7 @@ func NewFiber(config *viper.Viper) *fiber.App {
 	var app = fiber.New(fiber.Config{
 		AppName:      config.GetString("app.name"),
 		ErrorHandler: NewErrorHandler(),
-		Prefork:      config.GetBool("web.port"),
+		Prefork:      config.GetBool("web.prefork"),
 	})
 
 	return app

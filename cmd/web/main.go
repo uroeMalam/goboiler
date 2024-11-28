@@ -9,7 +9,8 @@ import (
 )
 
 func main() {
-	app := config.NewFiber()
+	viperConfig := config.NewViper()
+	app := config.NewFiber(viperConfig)
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("hello astronout!")
